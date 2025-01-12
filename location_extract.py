@@ -5,8 +5,7 @@ import requests
 import time
 
 # Global variable for custom Nominatim server
-#CUSTOM_NOMINATIM_SERVER = "http://10.0.0.111:8060/reverse"  # Define custom server URL or leave empty for the official server
-CUSTOM_NOMINATIM_SERVER = ""
+CUSTOM_NOMINATIM_SERVER = ""  # Define custom server URL or leave empty for the official server
 
 # Helper function to enforce rate limiting for the official server
 def rate_limited_request(url, params, headers, rate_limit=1):
