@@ -3,9 +3,13 @@ import subprocess
 from PIL import Image
 import requests
 import time
+import pillow_heif
+
+pillow_heif.register_heif_opener()
 
 # Global variable for custom Nominatim server
-CUSTOM_NOMINATIM_SERVER = ""  # Define custom server URL or leave empty for the official server
+#CUSTOM_NOMINATIM_SERVER = "http://10.0.0.111:8060/reverse"  # Define custom server URL or leave empty for the official server
+CUSTOM_NOMINATIM_SERVER = ""
 
 # Helper function to enforce rate limiting for the official server
 def rate_limited_request(url, params, headers, rate_limit=1):
@@ -129,7 +133,7 @@ def main(inputs):
         elif os.path.isdir(input_path):
             for root, _, files in os.walk(input_path):
                 for file in files:
-                    if file.lower().endswith(('.jpg', '.jpeg')):
+                    if file.lower().endswith(('.jpg', '.jpeg', '.png', '.tiff', '.heic', '.heif')):
                         images.append(os.path.join(root, file))
         else:
             print(f"Warning: {input_path} is not a valid file or directory. Skipping.")
