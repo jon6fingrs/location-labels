@@ -38,7 +38,7 @@ When used with the [Kodi Picture Slideshow Screensaver](https://kodi.wiki/view/A
 1. Clone or download this repository.
 2. Install the required Python libraries:
    ```bash
-   pip install piexif pillow requests
+   pip install piexif pillow requests pillow_heif
    ```
 
 ## Usage
@@ -76,7 +76,7 @@ When used with the [Kodi Picture Slideshow Screensaver](https://kodi.wiki/view/A
 
 - **API Rate Limits**: When using the official Nominatim server, the script enforces a rate limit of 1 request per second to comply with usage policies.
 - **Custom Nominatim Server**: If you self-host a Nominatim server, ensure it is accessible and correctly configured.
-- **File Types**: The script processes only `.jpg` and `.jpeg` files.
+- **File Types**: The script processes only `.jpg, .jpeg, .png, .tiff, .heic, and .heif` files.
 
 ## Troubleshooting
 
